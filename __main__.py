@@ -5,7 +5,7 @@ This is a simple game where involving stoping the spread of fake news as quickly
 as possible by adding and removing edges. The faster you stop the spread and the 
 least edges you add and remove, the higher your score.
 
-Current ver 0.0.2
+Current ver 0.0.3
 """
 
 import os
@@ -21,7 +21,7 @@ class App():
     def __init__(self):
         # Setup window
         pygame.init()
-        pygame.mixer.init()
+        # pygame.mixer.init()
 
         self.display = pygame.display
         self.display.set_caption("The Fake News Game")

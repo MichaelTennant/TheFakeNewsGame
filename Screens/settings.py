@@ -1,5 +1,5 @@
 """
-
+The settings screen for the fake news game, imported by __main__.py
 """
 
 class GUI():
