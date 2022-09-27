@@ -1,0 +1,52 @@
+#!/bin/bash
+echo "Installing dependancies"
+
+if !(command -v python3) >/dev/null; then
+    echo "python3 is required for the program to run but is not installed."
+    read -p "Install python3? (y/n): " OPTION
+    
+    if $OPTION = "y"; then
+        echo "Installing python3." # TODO: Install python3
+    else
+        echo "Stopping program."
+        exit
+    fi
+else
+    echo "python3 installtion detected, skipping python3 installtion."
+fi
+
+if !(command -v pip3) >/dev/null; then
+    echo "pip3 is required for the program to run but is not installed."
+    read -p "Install pip3? (y/n): " OPTION
+    
+    if $OPTION = "y"; then
+        echo "Installing pip3." # TODO: Install pip3
+    else
+        echo "Stopping program."
+        exit
+    fi
+else
+    echo "pip3 installation detected, skiping pip3 installtion."
+fi
+
+echo
+
+echo "Installing pygame"
+if (pip3 list --disable-pip-version-check 2>/dev/null | grep "pygame") >/dev/null; then
+    echo "pygame installation detected, skipping pygame installation."
+else
+    pip3 install pygame
+fi
+
+echo
+
+echo "Installing py-singleton"
+if (pip3 list --disable-pip-version-check 2>/dev/null | grep "py-singleton") >/dev/null; then
+    echo "py-singleton installation detected, skipping py-singleton installation."
+else
+    pip3 install py-singleton
+fi
+
+echo
+echo "All requirements installed starting program"
+# TODO: Run FakeNewsGame
