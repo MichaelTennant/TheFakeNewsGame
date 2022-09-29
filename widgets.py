@@ -7,7 +7,7 @@ pygame.mixer.init()
 
 class Button():
     def __init__(self, text, position, magnification, btn_type, sound):
-        self.pressed = 0 # 0 = Not currently pressed, 1 = Pressed after last tick, 2 = Pressed before last tick
+        self.pressed = 0 # 0 = Unpressed, 1 = Pressed this tick, 2 = Pressed before this tick 3 = Released
         self.sound = pygame.mixer.Sound(f".\\Assets\\Audio\\{sound}.wav")
         
         # Load button graphics
@@ -39,6 +39,9 @@ class Button():
 
             elif mouse_state[2]:
                 self.pressed = 2
+            
+            elif self.pressed == 1 or self.pressed == 2:
+                self.pressed = 3
                 
             else: self.pressed = 0
         else: self.pressed = 0

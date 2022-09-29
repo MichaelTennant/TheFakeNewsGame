@@ -5,7 +5,7 @@ This is a simple game where involving stoping the spread of fake news as quickly
 as possible by adding and removing edges. The faster you stop the spread and the 
 least edges you add and remove, the higher your score.
 
-Current ver 0.0.3
+Current ver 0.0.4
 """
 
 import os
@@ -14,7 +14,7 @@ from py_singleton import singleton
 import sys
 
 import inputs
-from Screens import game, menu, settings
+from Screens import menu
 
 @singleton # Only one instance of a singleton class can be running at a time
 class App():
@@ -50,7 +50,7 @@ class App():
             self.display.flip()
 
             # Set refresh rate to 30fps
-            self.clock.tick(30)
+            self.clock.tick(60)
 
 if __name__ == "__main__":
     app = App()

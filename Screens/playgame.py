@@ -1,5 +1,5 @@
 """
-The settings screen for the fake news game, imported by __main__.py
+The playgame screen for the fake news game, imported by __main__.py
 """
 
 import pygame.color, pygame.mouse
@@ -10,13 +10,13 @@ from Screens import menu
 class GUI():
     def __init__(self, parent):
         self.parent = parent
-        self.parent.display.set_caption("The Fake News Game - Settings")
+        self.parent.display.set_caption("The Fake News Game - Play Game")
 
         self.width, self.height = self.parent.window.get_size()
 
         # Create Title Object
         self.title_font = pygame.font.SysFont(".\\Assets\\Fonts\\PatrickHand-Regular.ttf", int(self.width/8))
-        self.title_text = self.title_font.render("Settings", True, pygame.Color(51,51,51))
+        self.title_text = self.title_font.render("Play Game", True, pygame.Color(51,51,51))
 
         self.title_rect = self.title_text.get_rect()
         self.title_rect.center = (self.width/2, self.height*0.09)
